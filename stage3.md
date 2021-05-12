@@ -1,18 +1,13 @@
 
-# Registro y creación de aplicaciones para cliente y servidor en Heroku
+# Registro en Heroku y creación de aplicación remota
 
-El objetivo final que perseguimos con este proceso de pasar a producción (despliegue, _deploy_, etc) es disponer de dos aplicaciones independientes para el cliente y el servidor que conectaremos de la siguiente forma:
+El objetivo final que perseguimos con este proceso de pasar a producción (despliegue, _deploy_, etc) es disponer de una aplicación de servidor que, a la vez que mantiene sus funcionalidades REST, sirva un archivo `index.html` donde React realice la composición del cliente. La aplicación de React estará contenida en el directorio `/public` del servidor.
 
-- Tu cliente de React se alojará en `https://myclient.herokuapp.com/` emitiendo las peticiones que procedan para consumir tu API.
-- Tu API de Express responderá desde `https://myserver.herokuapp.com/`a cada petición con el JSON que proceda.
+## Elige el nombre de tus aplicación
 
-Heroku ofrece un servicio gratuito de alojamiento para aplicaciones basadas en NodeJS, pudiendo desplegar a sus servidores los archivos tanto de tu cliente como de tu servidor y obteniendo así una URL para cada uno que permitirá accederlos.
+Tú elegirás qué nombre deseas para tu aplicación, aunque en adelante usaremos para esta documentación la URL `https://donuts-planet.herokuapp.com/` a modo de ejemplo. 
 
-## Elige los nombres de tus aplicaciones 
-
-Tú elegirás qué nombre deseas para tus aplicaciones, aunque en adelante usaremos para esta documentación las URLs `https://donuts-planet.herokuapp.com/`y `https://donuts-planet-api.herokuapp.com/` como ejemplo de cliente y servidor, respectivamente. 
-
-Si tu proyecto se llama, por ejemplo, Restaurants Locator, sería ideal elegir un nombre como `restaurants-locator` para el cliente, lo que dará lugar a la URL https://restaurants-locator.herokuapp.com y `restaurants-locator-api` para el servidor, lo que dará lugar a la URL https://restaurants-locator-api.herokuapp.com.
+Si tu proyecto se llama, por ejemplo, Restaurants Locator, sería ideal elegir un nombre como `restaurants-locator`, lo que dará lugar a la URL https://restaurants-locator.herokuapp.com.
 
 No llames a tu aplicación `donuts-planet`. Este nombre sólo lo usaremos a efectos ejemplificativos.
 
@@ -33,22 +28,22 @@ Para identificarnos en Heroku CLI y acceder a nuestra cuenta de Heroku desde la 
 
 Podremos cerrar la sesión cuando necesitemos mediante el comando `heroku logout`.
 
-## Creación de aplicación cliente en Heroku
+## Creación de aplicación en Heroku
 
-Alojaremos nuestro cliente de React en una aplicación de Heroku. Elige un buen nombre en este punto, ya que este será el que Heroku incluya en la URL pública con la que se podrá acceder a tu aplicación desde cualquier navegador. Es por ello que, si creases una aplicación de nombre `donuts-planet`, la URL final de tu producto sería:
+Alojaremos nuestra aplicación local una aplicación remota de Heroku. Elige un buen nombre en este punto, ya que este será el que Heroku incluya en la URL pública con la que se podrá acceder a tu aplicación desde cualquier navegador. Es por ello que, si creases una aplicación de nombre `donuts-planet`, la URL final de tu producto sería:
 
     https://donuts-planet.herokuapp.com/
     
-1. Accede mediante la terminal a la raíz de tu aplicación cliente `/client`, donde se encuentra su `package.json`, e introduce el comando necesario para crear la aplicación de Heroku y agregar el buildpack:
+1. Accede mediante la terminal a la raíz de tu aplicación servidor `/server`, donde se encuentra su `package.json`, e introduce el comando necesario para crear la aplicación de Heroku y agregar el buildpack:
 
    ````
-   heroku create donuts-planet -b https://github.com/mars/create-react-app-buildpack.git
+   heroku create donuts-planet
    ````
 
-2. Ahora enlaza el directorio `/client` en el que te encuentras al Git de la aplicación de Heroku:
+2. Ahora enlaza el directorio `/server` en el que te encuentras al Git de la aplicación de Heroku:
 
    ````
-   git remote add heroku_client_master https://git.heroku.com/xxx.git
+   git remote add heroku_server_master https://git.heroku.com/xxx.git
    ````
 
 3. Puedes comprobar en cualquier momento la aplicación de Heroku asociada a un Git mediante el comando:
@@ -58,16 +53,3 @@ Alojaremos nuestro cliente de React en una aplicación de Heroku. Elige un buen 
    ````
  
 Una vez hayas procedido, podrás acceder a esa URL. Recuerda que el número máximo de aplicaciones que podrás crear en una cuenta de Heroku sin indicar los datos de tu tarjeta de crédito es de 5 aplicaciones.
-
-## Creación de aplicación servidor en Heroku
-
-Usaremos de nuevo el comando `create` para crear nuestra aplicación donde alojaremos tu API de Express, pero esta vez lo haremos accediendo mediante la terminal al directorio raíz de la aplicación de servidor `/server`, donde se encuentra su `package.json`. 
-
-En este caso no es necesario Buildpack, y no olvides cambiar también el nombre de la aplicación y del remoto: 
-
-    heroku create donuts-planet-api
-    
-    git remote add heroku_server_master https://git.heroku.com/xxx.git
-    
-    heroku info --app donuts-planet-api
-    
