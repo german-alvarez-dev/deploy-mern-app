@@ -43,7 +43,7 @@ Alojaremos nuestra aplicación local una aplicación remota de Heroku. Elige un 
 2. Ahora enlaza el directorio `/server` en el que te encuentras al Git de la aplicación de Heroku:
 
    ````
-   git remote add heroku_server_master https://git.heroku.com/xxx.git
+   git remote add heroku_app_master https://git.heroku.com/xxx.git
    ````
 
 3. Puedes comprobar en cualquier momento la aplicación de Heroku asociada a un Git mediante el comando:
