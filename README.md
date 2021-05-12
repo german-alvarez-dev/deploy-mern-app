@@ -16,10 +16,12 @@ Describir el proceso para deplegar a producción en [Heroku](https://www.heroku.
 1. Realizar el registro en Heroku y crear la aplicación remota (stage 3)
 
 **Setup en sevidor y _biuld_ en cliente**: configurar el servidor para retornar un `index.html` e integrar un _build_ realizado a partir del cliente:
-_TO-DO_
+
+- _TO-DO_
 
 **Paso a producción**: realizar el paso a producción de la aplicación local a la aplicación remota:
-_TO-DO_
+
+- _TO-DO_
 
 ## Fases de paso a producción
 
