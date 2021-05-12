@@ -52,4 +52,6 @@ Alojaremos nuestra aplicación local una aplicación remota de Heroku. Elige un 
    heroku info --app donuts-planet
    ````
  
-Una vez hayas procedido, podrás acceder a esa URL. Recuerda que el número máximo de aplicaciones que podrás crear en una cuenta de Heroku sin indicar los datos de tu tarjeta de crédito es de 5 aplicaciones.
+Una vez hayas procedido, podrás acceder a esa URL aunque, hasta que porcedas al deploy, permanecerá vacía.
+
+Recuerda que el número máximo de aplicaciones que podrás crear en una cuenta de Heroku sin indicar los datos de tu tarjeta de crédito es de 5 aplicaciones.
