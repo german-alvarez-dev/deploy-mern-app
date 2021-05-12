@@ -15,9 +15,9 @@ Describir el proceso para deplegar a producción en [Heroku](https://www.heroku.
 
 - Realizar el registro en Heroku y crear la aplicación remota (stage 3)
 
-**Setup en sevidor y _biuld_ en cliente**: configurar el servidor para retornar un `index.html` e integrar un _build_ realizado a partir del cliente:
+**Setup en sevidor y _biuld_ en cliente**: configurar servidor y cliente para paso a producción:
 
-- _TO-DO_
+-  Retorno de aplicación React desde servidor (stage 4)
 
 **Paso a producción**: realizar el paso a producción de la aplicación local a la aplicación remota:
 
@@ -28,7 +28,7 @@ Describir el proceso para deplegar a producción en [Heroku](https://www.heroku.
 - Stage 1: [Registro en MongoDB Atlas y configuración base](https://github.com/german-alvarez-dev/deploy-mern-app/blob/main/stage1.md)
 - Stage 2:  [Paso a producción: base de datos](https://github.com/german-alvarez-dev/deploy-mern-app/blob/main/stage2.md)
 - Stage 3:  [Registro en Heroku y creación de aplicación remota](https://github.com/german-alvarez-dev/deploy-mern-app/blob/main/stage3.md)
-- Stage 4:  _PENDING_
+- Stage 4:  [Retorno de aplicación React desde servidor](https://github.com/german-alvarez-dev/deploy-mern-app/blob/main/stage4.md)
 - Stage 5:  _PENDING_
 - Stage 6:  _PENDING_
 
