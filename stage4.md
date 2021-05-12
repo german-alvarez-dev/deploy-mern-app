@@ -1,11 +1,14 @@
+# Retorno de aplicación React desde servidor 
+
+Tu aplicación de Express debe retornar un archivo `index.html` desde su directorio `/public`, donde React creará la SPA que conformará el cliente.
 
 
-# Paso a producción: servidor
+## Configuración de servidor
 
-Transferir tu API local a producción supone desplegar los archivos que la componen a un servidor externo, permitiendo así que las respuestas que ahora se emiten desde `http://localhost:5000/api` pasen a realizarse desde `https://planet-donuts-api.herokuapp.com/api`.
-       
-## Variables de entorno remoto
+Para que tu servidor pueda enviar archivos al front, es necesario instalar HBS así como crear un archivo `index.html` en el directorio `/public`. Una vez realizado este setup, incluir el siguiente middleware al final de app.js permitirá enviar siempre el HTML al cliente:
 
+       app.use((req, res) => res.sendFile(__dirname + "/public/index.html"));
+  
 Debido a que el archivo `.env` no será desplegado, es necesario habilitar las variables de entorno en tu aplicación de Heroku.
 
 1. Accede mediante la terminal al directorio raíz de tu servidor y asegúrate de que está enlazado al Git de servidor mediante `heroku apps:info --app planet-donuts-api`. Declara entonces cada una de las variables de entorno de tu archivo `.env` (excepto `DOMAIN`) con el comando `heroku config:set NOMBREVARIABLE=VALORVARIABLE --app nombreApp`. Ejemplo:
