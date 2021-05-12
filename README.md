@@ -25,9 +25,9 @@ Describir el proceso para deplegar a producción en [Heroku](https://www.heroku.
 
 ## Fases de paso a producción
 
-- Stage 1: [Registro en MongoDB Atlas y configuración base](https://github.com/german-alvarez-dev/deploy-react-express-app/blob/main/stage1.md)
-- Stage 2:  [Paso a producción: base de datos](https://github.com/german-alvarez-dev/deploy-react-express-app/blob/main/stage2.md)
-- Stage 3:  [Registro en Heroku y creación de aplicaciones para cliente y servidor](https://github.com/german-alvarez-dev/deploy-react-express-app/blob/main/stage3.md)
+- Stage 1: [Registro en MongoDB Atlas y configuración base](https://github.com/german-alvarez-dev/deploy-mern-app/blob/main/stage1.md)
+- Stage 2:  [Paso a producción: base de datos](https://github.com/german-alvarez-dev/deploy-mern-app/blob/main/stage2.md)
+- Stage 3:  [Registro en Heroku y creación de aplicaciones para cliente y servidor](https://github.com/german-alvarez-dev/deploy-mern-app/blob/main/stage3.md)
 - Stage 4:  _PENDING_
 - Stage 5:  _PENDING_
 - Stage 6:  _PENDING_
