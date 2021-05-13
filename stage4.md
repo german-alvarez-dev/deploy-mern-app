@@ -1,44 +1,25 @@
 # Retorno de aplicación React desde servidor 
 
-Tu aplicación de Express debe retornar un archivo `index.html` desde su directorio `/public`, donde React creará la SPA que conformará el cliente.
+Tu aplicación de Express debe retornar un archivo `index.html` desde su directorio `/public`, donde React creará la SPA que conformará el cliente. Para ello, es necesario configurar el servidor a este efecto, así como deshabilitar la gestión de errores 404 y 500 que, en adelante, será asumida por React.
+
+
+## Build de producción 
+
+Tu aplicación de React debe ser comprimida a su versión de producción e incluida en el directorio `/public` del servidor:
+
+1. Accede al directorio `/client` de tu proyecto y ejecuta el comando `npm run build`. Esto creará un directorio `/build` con la versión de tu cliente comprimida y lista para subir a producción. 
+2. Mueve todo el contenido de este nuevo directorio a `/public` en tu servidor.
+
 
 
 ## Configuración de servidor
 
-Para que tu servidor pueda enviar archivos al front, es necesario instalar HBS así como crear un archivo `index.html` en el directorio `/public`. Una vez realizado este setup, incluir el siguiente middleware al final de app.js permitirá enviar siempre el HTML al cliente:
+Para que tu servidor pueda enviar archivos al front, es necesario incluir el siguiente middleware al final de `app.js`, lo que permitirá enviar siempre el `index.html` que incluye el build de React al cliente:
 
        app.use((req, res) => res.sendFile(__dirname + "/public/index.html"));
   
-Debido a que el archivo `.env` no será desplegado, es necesario habilitar las variables de entorno en tu aplicación de Heroku.
-
-1. Accede mediante la terminal al directorio raíz de tu servidor y asegúrate de que está enlazado al Git de servidor mediante `heroku apps:info --app planet-donuts-api`. Declara entonces cada una de las variables de entorno de tu archivo `.env` (excepto `DOMAIN`) con el comando `heroku config:set NOMBREVARIABLE=VALORVARIABLE --app nombreApp`. Ejemplo:
-
-       heroku config:set CLOUDINARY_NAME=german-cloud --app planet-donuts-api
-  
-   No olvides sustituir `planet-donuts-api` por el nombre de tu aplicación servidor. Puedes consultar el valor de cualquier variable de entorno con el comando `heroku config:get NOMBREVARIABLE` 
-
-2. Una vez hayas realizado este proceso para cada una, incluye la variable de entorno `DOMAIN` (la misma que en tu servidor local apunta a `http://localhost:3000`) pero con el valor `https://donuts-planet.heorkuapp.com`, es decir, apuntando a tu cliente remoto. Esto garantiza frente a CORS el acceso de tu cliente remoto a la API:
-
-       heroku config:set DOMAIN=https://planet-donuts.herokuapp.com --app planet-donuts-api
+Asimismo, la gestión de errores 404 y 500 ya está siendo asumida por los propios endpoints del servidor, por lo que el archivo `error-handlers.config.js` de tu directorio `/config` ya no es necesario. Elimina tanto el archivo como su requerimiento en `app.js`.
 
 
 ## Paso a producción
 
-Transferir los archivos a la aplicación de Heroku hará accesible tu API desde los dominios aceptados por CORS, a la vez que mantendrá todas sus funcionalidades en el entorno local donde puedes seguir desarrollando.
-
-1. Accede mediante la terminal a la raíz de tu servidor, donde se encuentra el archivo `package.json`
-2. Agrega los cambios y realiza un primer commit:
-       
-       git add .
-       git commit -m "detalles asociados al commit"
-
-3. Procede a la subida **desde el directorio raíz del proyecto**, donde se encuentran los directorios `/client` y `/server`:
-       
-       git subtree push --prefix=server heroku_server_master master
-
-4. Una vez finalizado, comprueba la ausencia de errores en los logs mediante el comando `heroku logs --tail --app planet-donuts-api`
-5. Abre tu aplicación en el navegador mediante `heroku open --app planet-donuts-api`, o tecleando la URL de la misma. Podrás comprobar si los endpoints de tu API mantienen su funcionalidad, ahora en remoto.
-
-## Interfaz de usuario de Heroku
-
-Puedes acceder a [tu cuenta de Heroku](https://dashboard.heroku.com/apps) mediante el navegador para comprobar detalles de tus aplicaciones: commits (pestaña *Activity*), variables de entorno (pestaña *Settings*), o incluso trabajar con la consola de Heroku en la esquina superior derecha *More => Console*.
