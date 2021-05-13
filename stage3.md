@@ -55,3 +55,14 @@ Alojaremos nuestra aplicación local una aplicación remota de Heroku. Elige un 
 Una vez hayas procedido, podrás acceder a esa URL aunque, hasta que porcedas al deploy, permanecerá vacía.
 
 Recuerda que el número máximo de aplicaciones que podrás crear en una cuenta de Heroku sin indicar los datos de tu tarjeta de crédito es de 5 aplicaciones.
+
+
+## Creación de variables de entorno remoto
+
+Debido a que el archivo `.env` no será desplegado, es necesario habilitar las variables de entorno en tu aplicación de Heroku.
+
+Accede mediante la terminal al directorio raíz de tu servidor y asegúrate de que está enlazado al Git de servidor mediante `heroku apps:info --app planet-donuts`. Declara entonces cada una de las variables de entorno de tu archivo `.env` con el comando `heroku config:set NOMBREVARIABLE=VALORVARIABLE --app nombreApp`. Ejemplo:
+
+       heroku config:set CLOUDINARY_NAME=german-cloud --app planet-donuts
+  
+No olvides sustituir `planet-donuts` por el nombre de tu aplicación servidor. Puedes consultar el valor de cualquier variable de entorno con el comando `heroku config:get NOMBREVARIABLE` 
