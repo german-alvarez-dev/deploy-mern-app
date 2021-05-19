@@ -7,7 +7,7 @@ Tu aplicación de Express debe retornar un archivo `index.html` desde su directo
 
 El cliente debe tomar, para todos los servicios, el base URL `http://localhost:5000/api` durante el trabajo en local, mientras que la versión de prducción debe apuntar a `https://donuts-planet.herokuapp.com/api`.
 
-Para esto usaremos [las variables de entorno de Create React App](https://create-react-app.dev/docs/adding-custom-environment-variables/). Modifica los scripts de React en el `package.json`, incluyendo la misma variable para que apunte a una u otra URL basde según el entorno:
+Para esto usaremos [las variables de entorno de Create React App](https://create-react-app.dev/docs/adding-custom-environment-variables/). Modifica los scripts de React en el `package.json`, incluyendo la misma variable para que apunte a una u otra URL base según el entorno:
 
 ````json
  "scripts": {
