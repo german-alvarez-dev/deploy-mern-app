@@ -65,7 +65,7 @@ Accede mediante la terminal al directorio raíz de tu servidor y asegúrate de q
 
        heroku config:set CLOUDINARY_NAME=german-cloud --app planet-donuts
   
-No olvides sustituir `planet-donuts` por el nombre de tu aplicación servidor. Puedes consultar el valor de cualquier variable de entorno con el comando `heroku config:get NOMBREVARIABLE` 
+Asimismo, recuerda sustituir el valor de la variable `MONGODB_URI` por el string de MongoDB Atlas remoto. No olvides sustituir `planet-donuts` por el nombre de tu aplicación servidor. Puedes consultar el valor de cualquier variable de entorno con el comando `heroku config:get NOMBREVARIABLE` 
 
 
 ## Interfaz de usuario de Heroku
