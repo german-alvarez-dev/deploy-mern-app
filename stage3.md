@@ -1,9 +1,9 @@
 
 # Registro en Heroku y creación de aplicación remota
 
-El objetivo final que perseguimos con este proceso de pasar a producción (despliegue, _deploy_, etc) es disponer de una aplicación de servidor que, a la vez que mantiene sus funcionalidades REST, sirva un archivo `index.html` donde React realice la composición del cliente. La aplicación de React estará contenida en el directorio `/public` del servidor.
+El objetivo  que perseguimos con este proceso de pasar a producción (despliegue, _deploy_, etc) es disponer de una aplicación remota en Heroku donde incluir los archivos de tu aplicación local.
 
-## Elige el nombre de tus aplicación
+## Elige el nombre de tu aplicación
 
 Tú elegirás qué nombre deseas para tu aplicación, aunque en adelante usaremos para esta documentación la URL `https://donuts-planet.herokuapp.com/` a modo de ejemplo. 
 
