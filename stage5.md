@@ -5,9 +5,9 @@
 Transferir tu aplicación a producción supone subir todos los archivos de tu directorio `/server` a Heroku. 
 
 `
-       git add .
+git add .
        
-       git commit -m "deploy"
+git commit -m "deploy"
        
-       git subtree push --prefix=server heroku main
+git subtree push --prefix=server heroku main
 `
