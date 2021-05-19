@@ -4,6 +4,10 @@
 
 Describir el proceso para deplegar a producción en [Heroku](https://www.heroku.com/) + [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) una MERN Stack app con cliente [`create-react-app`](https://create-react-app.dev/docs/getting-started/) y API [ExpressJS](https://expressjs.com/).
 
+El objetivo final es pasar a producción (despliegue, _deploy_, etc) nuestra aplicación local: disponer de una aplicación remota de Express que, a la vez que mantiene sus funcionalidades REST, sirva un archivo `index.html` donde React realice la composición del cliente. 
+
+La aplicación de React estará contenida en el directorio `/public` del servidor.
+
 ## Objetivo del deploy
 
 - **Base de datos**: hacer el paso a producción de la base de datos local a una base de datos remota en MongoDB Atlas:
