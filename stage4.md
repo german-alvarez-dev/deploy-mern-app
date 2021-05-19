@@ -1,4 +1,4 @@
-# Confirguración de cliente y servidor para producción
+# Configuración de cliente y servidor para producción
 
 Tu aplicación de Express debe retornar un archivo `index.html` desde su directorio `/public`, donde React creará la SPA que conformará el cliente. Para ello, es necesario configurar el servidor a este efecto, así como deshabilitar la gestión de errores 404 y 500 que, en adelante, será asumida por React.
 
