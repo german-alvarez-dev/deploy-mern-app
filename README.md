@@ -6,22 +6,13 @@ Describir el proceso para deplegar a producción en [Heroku](https://www.heroku.
 
 ## Objetivo del deploy
 
-**Base de datos**: hacer el paso a producción de la base de datos local a una base de datos remota en MongoDB Atlas:
+- **Base de datos**: hacer el paso a producción de la base de datos local a una base de datos remota en MongoDB Atlas:
+  - Realizar el registro en MongoDB Atlas y crear la base de datos remota (stage 1)
+  - Exportar los datos de la base de datos local e importaros en la base de datos remota (stage 2)
+- **Aplicación Heroku**: crear en Heroku la aplicación remota (stage 3)
+- **Setup en sevidor y _biuld_ en cliente**: configurar servidor y cliente para paso a producción (stage 4)
+- **Paso a producción**: transferir a la aplicación de Heroku los archivos (stage 5)
 
-- Realizar el registro en MongoDB Atlas y crear la base de datos remota (stage 1)
-- Exportar los datos de la base de datos local e importaros en la base de datos remota (stage 2)
-
-**Aplicación Heroku**: crear en Heroku la aplicación remota donde desplegar cliente y API:
-
-- Realizar el registro en Heroku y crear la aplicación remota (stage 3)
-
-**Setup en sevidor y _biuld_ en cliente**: configurar servidor y cliente para paso a producción:
-
--  Configuración de cliente y servidor para producción (stage 4)
-
-**Paso a producción**: transferir a la aplicación de Heroku los archivos (stage 5)
-
-- _TO-DO_
 
 ## Fases de paso a producción
 
