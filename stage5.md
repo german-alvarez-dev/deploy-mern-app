@@ -9,5 +9,5 @@ git add .
        
 git commit -m "deploy"
        
-git subtree push --prefix=server heroku main
+git subtree push --prefix=server heroku_app_master main
 `
